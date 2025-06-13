@@ -43,7 +43,7 @@ const Navbar = ({ className }: { className?: string }) => {
   return (
     <header
       className={cn(
-        "sticky inset-x-0 top-0 z-40  border-b-border h-[var(--navbar-height)] w-full flex-col items-center justify-center border-b  md:flex bg-background/10 backdrop-blur",
+        "sticky inset-x-0 top-0 z-40 h-12 border-b-border w-full flex-col items-center justify-center border-b  md:flex bg-background/10 backdrop-blur",
         className
       )}>
       <nav className="flex w-full max-w-screen-2xl items-center justify-between px-5 py-2">

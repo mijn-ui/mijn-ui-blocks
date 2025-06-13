@@ -14,6 +14,10 @@
     border-color: hsl(var(--mijnui-border));
   }
 
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
     background-color: hsl(var(--mijnui-background));
     color: hsl(var(--mijnui-foreground));

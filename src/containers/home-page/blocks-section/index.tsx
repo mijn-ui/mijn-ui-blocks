@@ -25,35 +25,39 @@ const BlocksSection = () => {
         onFilterChange={setFilter}
       />
 
-      {/* Blocks content */}
-      <div className="relative mt-16 flex w-full max-w-screen-xl flex-col gap-32">
-        {filteredBlocks.length > 0 ? (
-          filteredBlocks.map((block) => (
-            <div key={block.name} className="w-full">
-              <div className="flex items-center justify-between gap-2">
-                <SubTitle>{block.name}</SubTitle>
-                <span className="text-[10px] px-1.5 py-0.5 capitalize bg-default rounded-full">
-                  {block.tech}
-                </span>
+      <div className="px-5 w-full flex justify-center">
+        {/* Blocks content */}
+        <div className="relative sm:mt-12 mt-8 md:mt-16 flex w-full max-w-screen-xl flex-col sm:gap-16 gap-8 md:gap-32">
+          {filteredBlocks.length > 0 ? (
+            filteredBlocks.map((block) => (
+              <div key={block.name} className="w-full">
+                <div className="flex items-center justify-between gap-2">
+                  <SubTitle>{block.name}</SubTitle>
+                  <span className="text-[10px] px-1.5 py-0.5 capitalize bg-default rounded-full">
+                    {block.tech}
+                  </span>
+                </div>
+                <p className="mt-2 sm:text-base text-sm text-muted-foreground">
+                  {block.description}
+                </p>
+                <div className="mt-4">
+                  <BlockViewer url={block.url} />
+                </div>
               </div>
-              <p className="mt-2 text-muted-foreground">{block.description}</p>
-              <div className="mt-4">
-                <BlockViewer url={block.url} />
-              </div>
+            ))
+          ) : (
+            <div className="text-center min-h-96 flex items-center justify-center flex-col text-muted-foreground">
+              <p className="text-lg font-semibold">
+                More blocks are coming soon!
+              </p>
+              <p className="text-sm">
+                We are currently in beta and actively working on adding more
+                blocks to showcase the full potential of our design system.
+              </p>
             </div>
-          ))
-        ) : (
-          <div className="text-center min-h-96 flex items-center justify-center flex-col text-muted-foreground">
-            <p className="text-lg font-semibold">
-              More blocks are coming soon!
-            </p>
-            <p className="text-sm">
-              We are currently in beta and actively working on adding more
-              blocks to showcase the full potential of our design system.
-            </p>
-          </div>
-        )}
-        <VerticalBorderDecorator />
+          )}
+          <VerticalBorderDecorator />
+        </div>
       </div>
     </section>
   );
@@ -73,15 +77,15 @@ export function TechnologyFilter({
   onFilterChange,
 }: TechnologyFilterProps) {
   return (
-    <div className="sticky top-[52px] z-20 flex w-full max-w-screen-xl justify-center bg-background-subtle backdrop-blur">
-      <div className="flex w-full items-center justify-start divide-x">
+    <div className="sticky top-12 z-20 flex w-full justify-center bg-background-subtle backdrop-blur overflow-hidden px-5">
+      <div className="flex w-full max-w-screen-xl items-center gap-0.5 justify-start divide-x">
         {BLOCK_GROUPS.map((group) => {
           const Icon = Icons[group];
           const active = selectedFilter === group;
           return (
             <Button
               key={group}
-              className="gap-2 border-dashed border-gray-600 text-xs capitalize text-muted-foreground data-[state=active]:bg-accent data-[state=active]:text-accent-foreground"
+              className="sm:gap-2 border-dashed border-gray-600 text-xs capitalize text-muted-foreground data-[state=active]:bg-accent data-[state=active]:text-accent-foreground px-1.5 sm:px-2.5 gap-1"
               size="sm"
               variant="ghost"
               radius="none"
@@ -94,7 +98,7 @@ export function TechnologyFilter({
         })}
 
         <Button
-          className="gap-2 border-dashed border-gray-600 text-xs capitalize text-muted-foreground data-[state=active]:bg-accent data-[state=active]:text-accent-foreground"
+          className="gap-2 border-dashed border-gray-600 text-xs capitalize text-muted-foreground data-[state=active]:bg-accent data-[state=active]:text-accent-foreground px-2 sm:px-2.5"
           size="sm"
           variant="ghost"
           radius="none"

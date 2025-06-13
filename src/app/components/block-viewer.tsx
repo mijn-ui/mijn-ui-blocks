@@ -199,7 +199,7 @@ const BlockViewerContent = () => {
 const BlockViewerSourceCode = () => {
   return (
     <TabsContent value="source">
-      <div className="flex w-full items-center justify-center h-[930px] bg-accent rounded-large border">
+      <div className="flex w-full items-center justify-center aspect-[4/2.5] rounded-xl border-small bg-accent">
         <p className="text-muted-foreground">
           Source code for this block is not available.
         </p>

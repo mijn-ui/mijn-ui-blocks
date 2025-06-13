@@ -16,9 +16,9 @@ const Footer = ({ children, className }: FooterProps) => {
         <p className="bg-gradient-to-br from-foreground to-muted-foreground bg-clip-text text-tiny font-medium tracking-tight text-transparent sm:text-small">
           All Right Reserved By MijnUI.
         </p>
-      </div>
 
-      {children}
+        {children}
+      </div>
     </footer>
   );
 };

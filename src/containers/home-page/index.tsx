@@ -17,15 +17,15 @@ const HomePage = () => {
       <div className="mt-[clamp(120px,15vw,240px)]">
         <div
           id="blocks"
-          className="relative flex size-full flex-col items-center justify-center bg-background-subtle px-5 py-12 opacity-100 transition ease-in-out  sm:px-10 sm:pb-32 sm:pt-24 md:pb-40 md:pt-32 transition-color duration-300">
+          className="relative flex size-full flex-col items-center justify-center bg-background-subtle pb-32 pt-12 opacity-100 transition ease-in-out sm:px-10 sm:pb-32 sm:pt-24 md:pb-40 md:pt-32 transition-color duration-300">
           <Suspense fallback={<div className="px-5 py-8">Loading...</div>}>
             <BlocksSection />
           </Suspense>
         </div>
       </div>
 
-      <Footer className="flex w-full items-center justify-center border-t">
-        <p className="text-sm text-muted-foreground">
+      <Footer>
+        <p className="text-xs sm:text-sm text-muted-foreground">
           Created by{" "}
           <a
             href="https://github.com/HTLA380"
