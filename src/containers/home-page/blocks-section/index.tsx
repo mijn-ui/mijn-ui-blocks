@@ -74,7 +74,7 @@ export function TechnologyFilter({
 }: TechnologyFilterProps) {
   return (
     <div className="sticky top-[52px] z-20 flex w-full max-w-screen-xl justify-center bg-background-subtle backdrop-blur">
-      <div className="flex w-pfull items-center justify-start divide-x">
+      <div className="flex w-full items-center justify-start divide-x">
         {BLOCK_GROUPS.map((group) => {
           const Icon = Icons[group];
           const active = selectedFilter === group;
