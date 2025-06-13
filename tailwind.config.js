@@ -1,14 +1,20 @@
 import { mijnui } from "@mijn-ui/react";
+import tailwindCssAnimate from "tailwindcss-animate";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./blocks/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@mijn-ui/**/dist/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "background-subtle": "hsl(var(--background-subtle))",
+      },
+    },
   },
-  plugins: [mijnui()],
+  plugins: [mijnui(), tailwindCssAnimate],
 };

@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background-subtle: 210 20% 98%;
+  }
+
+  .dark {
+    --background-subtle: 0 0% 5%;
+  }
   * {
     border-color: hsl(var(--mijnui-border));
   }

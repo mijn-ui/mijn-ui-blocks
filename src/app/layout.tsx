@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+import { Navbar } from "./components/layout/navbar";
+import ThemeProvider from "./components/providers/theme-provider";
 import "./globals.css";
+import { NuqsAdapter } from "nuqs/adapters/next";
+import Announcement from "./components/announcement";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
 });
 
@@ -23,9 +21,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider>
+          <NuqsAdapter>
+            <Announcement />
+            <Navbar />
+            {children}
+          </NuqsAdapter>
+        </ThemeProvider>
       </body>
     </html>
   );

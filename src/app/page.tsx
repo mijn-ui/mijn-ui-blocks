@@ -1,7 +1,8 @@
+import HomePage from "@/containers/home-page";
 import React from "react";
 
-const Home = () => {
-  return <div>Hello world</div>;
+const Page = () => {
+  return <HomePage />;
 };
 
-export default Home;
+export default Page;
