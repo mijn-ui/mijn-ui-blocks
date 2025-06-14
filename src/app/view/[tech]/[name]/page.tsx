@@ -122,7 +122,7 @@ const getBlockComponent = (
  * @param options - Configuration options for the file path
  * @returns HTML content as a cleaned string
  */
-export function getHTMLContent(contentPath: string): string {
+function getHTMLContent(contentPath: string): string {
   try {
     const absolutePath = path.join(process.cwd(), contentPath);
 
