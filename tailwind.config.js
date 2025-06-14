@@ -5,8 +5,7 @@ import tailwindCssAnimate from "tailwindcss-animate";
 module.exports = {
   darkMode: "class",
   content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./blocks/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,html,jsx,tsx,mdx}",
     "./node_modules/@mijn-ui/**/dist/**/*.js",
   ],
   theme: {

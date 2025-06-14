@@ -276,7 +276,7 @@ const CalendarFullExample = () => {
 
   if (!isDesktop) {
     return (
-      <div>
+      <div className="text-sm items-center flex justify-center size-full">
         <p>Calendar is only available in the desktop version</p>
       </div>
     );

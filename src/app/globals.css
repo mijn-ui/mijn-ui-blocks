@@ -1,3 +1,7 @@
+/* temporary theme import, since mijnui react and mijnui tailwind has a different theme colors and variables
+we are currently working to synchornize them */
+@import "../blocks/tailwind/theme.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

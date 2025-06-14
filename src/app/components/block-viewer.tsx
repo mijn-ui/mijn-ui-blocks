@@ -59,16 +59,23 @@ const useBlockViewerContext = () => {
 
 type BlockViewerProps = {
   url: string;
+  iframeHeight: number;
 };
 
-const BlockViewer = ({ url }: BlockViewerProps) => {
+const BlockViewer = ({ url, iframeHeight }: BlockViewerProps) => {
   const resizablePanelRef = useRef<ImperativePanelHandle>(null);
   const [iframeKey, setIframeKey] = useState(0);
 
   return (
     <BlockViewerContext.Provider
       value={{ url, iframeKey, setIframeKey, resizablePanelRef }}>
-      <div className="w-full">
+      <div
+        className="w-full"
+        style={
+          {
+            "--iframe-height": `${iframeHeight}px`,
+          } as React.CSSProperties
+        }>
         <Tabs defaultValue="preview" className="relative gap-4 flex flex-col">
           <BlockViewerToolbar />
           <BlockViewerContent />
@@ -183,8 +190,7 @@ const BlockViewerContent = () => {
           <iframe
             key={iframeKey}
             src={url}
-            height={930}
-            className="relative z-20 w-full bg-background"
+            className="relative z-20 w-full bg-background h-[var(--iframe-height)]"
           />
         </ResizablePanel>
         <ResizableHandle className="relative hidden w-3 bg-transparent p-0 after:absolute after:right-0 after:top-1/2 after:h-8 after:w-[6px] after:-translate-x-px after:-translate-y-1/2 after:rounded-full after:bg-border after:transition-all after:hover:h-10 md:block" />
@@ -199,7 +205,7 @@ const BlockViewerContent = () => {
 const BlockViewerSourceCode = () => {
   return (
     <TabsContent value="source">
-      <div className="flex w-full items-center justify-center aspect-[4/2.5] rounded-xl border-small bg-accent">
+      <div className="flex w-full items-center justify-center aspect-[4/2.5] h-[var(--iframe-height)] rounded-xl border-small bg-accent">
         <p className="text-muted-foreground">
           Source code for this block is not available.
         </p>

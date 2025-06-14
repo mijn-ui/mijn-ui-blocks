@@ -1,18 +1,23 @@
-import { useQueryState } from "nuqs";
-import { SubTitle } from "@/app/components/ui/typography";
 import { BlockViewer } from "@/app/components/block-viewer";
-import { BLOCK_DATA, BLOCK_GROUPS, type TechnologyGroup } from "./data";
-import { Button, cn } from "@mijn-ui/react";
 import { Icons } from "@/app/components/ui/icons";
+import { SubTitle } from "@/app/components/ui/typography";
+import { Blocks } from "@/blocks";
+import { Button, cn } from "@mijn-ui/react";
+import { useQueryState } from "nuqs";
 
 const BlocksSection = () => {
   const [filter, setFilter] = useQueryState("filter");
 
   const filteredGroups = filter
-    ? BLOCK_DATA.filter((group) => group.group === filter)
-    : BLOCK_DATA;
+    ? Blocks.filter((blockGroup) => blockGroup.group === filter)
+    : Blocks;
 
-  const filteredBlocks = filteredGroups.flatMap((group) => group.items);
+  const filteredBlocks = filteredGroups.flatMap((blockGroup) =>
+    blockGroup.blocks.map((block) => ({
+      ...block,
+      tech: blockGroup.group,
+    }))
+  );
 
   return (
     <section className="relative flex w-full flex-col items-center">
@@ -20,19 +25,16 @@ const BlocksSection = () => {
       <HorizontalBordersDecorator />
 
       {/* Technology filter */}
-      <TechnologyFilter
-        selectedFilter={filter as TechnologyGroup | null}
-        onFilterChange={setFilter}
-      />
+      <TechnologyFilter selectedFilter={filter} onFilterChange={setFilter} />
 
       <div className="px-5 w-full flex justify-center">
         {/* Blocks content */}
         <div className="relative sm:mt-12 mt-8 md:mt-16 flex w-full max-w-screen-xl flex-col sm:gap-16 gap-8 md:gap-32">
           {filteredBlocks.length > 0 ? (
             filteredBlocks.map((block) => (
-              <div key={block.name} className="w-full">
+              <div key={`${block.component}-${block.name}`} className="w-full">
                 <div className="flex items-center justify-between gap-2">
-                  <SubTitle>{block.name}</SubTitle>
+                  <SubTitle>{block.title}</SubTitle>
                   <span className="text-[10px] px-1.5 py-0.5 capitalize bg-default rounded-full">
                     {block.tech}
                   </span>
@@ -41,7 +43,10 @@ const BlocksSection = () => {
                   {block.description}
                 </p>
                 <div className="mt-4">
-                  <BlockViewer url={block.url} />
+                  <BlockViewer
+                    iframeHeight={block.iframeHeight || 930}
+                    url={`/view/${block.tech}/${block.name}`}
+                  />
                 </div>
               </div>
             ))
@@ -68,18 +73,20 @@ export { BlocksSection };
 /* -------------------------------------------------------------------------- */
 
 interface TechnologyFilterProps {
-  selectedFilter: TechnologyGroup | null;
-  onFilterChange: (value: TechnologyGroup | null) => void;
+  selectedFilter: string | null;
+  onFilterChange: (value: string | null) => void;
 }
 
 export function TechnologyFilter({
   selectedFilter,
   onFilterChange,
 }: TechnologyFilterProps) {
+  const blockGroups = Blocks.map((blockGroup) => blockGroup.group);
+
   return (
     <div className="sticky top-12 z-20 flex w-full justify-center bg-background-subtle backdrop-blur overflow-hidden px-5">
       <div className="flex w-full max-w-screen-xl items-center gap-0.5 justify-start divide-x">
-        {BLOCK_GROUPS.map((group) => {
+        {blockGroups.map((group) => {
           const Icon = Icons[group];
           const active = selectedFilter === group;
           return (

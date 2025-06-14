@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Navbar } from "./components/layout/navbar";
+import { NuqsAdapter } from "nuqs/adapters/next";
 import ThemeProvider from "./components/providers/theme-provider";
 import "./globals.css";
-import { NuqsAdapter } from "nuqs/adapters/next";
-import Announcement from "./components/announcement";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,11 +22,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider>
-          <NuqsAdapter>
-            <Announcement />
-            <Navbar />
-            {children}
-          </NuqsAdapter>
+          <NuqsAdapter>{children}</NuqsAdapter>
         </ThemeProvider>
       </body>
     </html>
