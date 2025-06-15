@@ -205,8 +205,8 @@ const BlockViewerContent = () => {
 const BlockViewerSourceCode = () => {
   return (
     <TabsContent value="source">
-      <div className="flex w-full items-center justify-center aspect-[4/2.5] h-[var(--iframe-height)] rounded-xl border-small bg-accent">
-        <p className="text-muted-foreground">
+      <div className="flex w-full items-center justify-center aspect-[4/2.5] md:h-[var(--iframe-height)] rounded-xl border-small bg-accent text-center p-4">
+        <p className="text-muted-foreground text-sm">
           Source code for this block is not available.
         </p>
       </div>

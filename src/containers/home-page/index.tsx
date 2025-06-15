@@ -10,14 +10,14 @@ const HomePage = () => {
     <div className="min-h-screen">
       <div
         id="hero"
-        className="flex w-full justify-center px-5 pt-20 sm:px-8 sm:pt-28 md:px-10 md:pt-36">
+        className="flex w-full justify-center px-5 pt-20 szm:px-8 sm:pt-28 md:px-10 md:pt-36">
         <HeroSection />
       </div>
 
-      <div className="mt-[clamp(120px,15vw,240px)]">
+      <div className="mt-[clamp(60px,15vw,120px)]">
         <div
           id="blocks"
-          className="relative flex size-full flex-col items-center justify-center bg-background-subtle pb-32 pt-12 opacity-100 transition ease-in-out sm:px-10 sm:pb-32 sm:pt-24 md:pb-40 md:pt-32 transition-color duration-300">
+          className="relative flex size-full flex-col items-center justify-center pb-32 py-16 opacity-100 transition ease-in-out transition-color duration-300">
           <Suspense fallback={<div className="px-5 py-8">Loading...</div>}>
             <BlocksSection />
           </Suspense>

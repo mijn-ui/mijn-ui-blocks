@@ -11,7 +11,7 @@ import {
   CollapsibleTrigger,
   Separator,
 } from "@mijn-ui/react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import ClickAwayListener from "react-click-away-listener";
@@ -92,6 +92,12 @@ const Navbar = ({ className }: { className?: string }) => {
                   <Separator />
 
                   <div className="flex w-full items-center justify-between">
+                    <Link
+                      className="inline-flex items-center gap-2 text-muted-foreground hover:text-secondary"
+                      target="_blank"
+                      href={"https://github.com/mijn-ui/mijn-ui-blocks"}>
+                      Github <ExternalLink />
+                    </Link>
                     <ThemeToggler />
                   </div>
                 </div>

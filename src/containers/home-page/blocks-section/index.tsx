@@ -2,7 +2,7 @@ import { BlockViewer } from "@/app/components/block-viewer";
 import { Icons } from "@/app/components/ui/icons";
 import { SubTitle } from "@/app/components/ui/typography";
 import { Blocks } from "@/blocks";
-import { Button, cn } from "@mijn-ui/react";
+import { Button } from "@mijn-ui/react";
 import { useQueryState } from "nuqs";
 
 const BlocksSection = () => {
@@ -21,15 +21,13 @@ const BlocksSection = () => {
 
   return (
     <section className="relative flex w-full flex-col items-center">
-      {/* Horizontal border decorators */}
-      <HorizontalBordersDecorator />
-
+      {/* <SubTitle className="mb-8">Blocks</SubTitle> */}
       {/* Technology filter */}
       <TechnologyFilter selectedFilter={filter} onFilterChange={setFilter} />
 
       <div className="px-5 w-full flex justify-center">
         {/* Blocks content */}
-        <div className="relative sm:mt-12 mt-8 md:mt-16 flex w-full max-w-screen-xl flex-col sm:gap-16 gap-8 md:gap-32">
+        <div className="relative sm:mt-12 mt-8 md:mt-16 flex w-full max-w-screen-lg flex-col sm:gap-16 gap-16 md:gap-32">
           {filteredBlocks.length > 0 ? (
             filteredBlocks.map((block) => (
               <div key={`${block.component}-${block.name}`} className="w-full">
@@ -61,7 +59,6 @@ const BlocksSection = () => {
               </p>
             </div>
           )}
-          <VerticalBorderDecorator />
         </div>
       </div>
     </section>
@@ -84,15 +81,15 @@ export function TechnologyFilter({
   const blockGroups = Blocks.map((blockGroup) => blockGroup.group);
 
   return (
-    <div className="sticky top-12 z-20 flex w-full justify-center bg-background-subtle backdrop-blur overflow-hidden px-5">
-      <div className="flex w-full max-w-screen-xl items-center gap-0.5 justify-start divide-x">
+    <div className="sticky top-12 z-20 flex w-full bg-background justify-center overflow-hidden px-5">
+      <div className="flex w-full max-w-screen-lg items-center gap-0.5 justify-end">
         {blockGroups.map((group) => {
           const Icon = Icons[group];
           const active = selectedFilter === group;
           return (
             <Button
               key={group}
-              className="sm:gap-2 border-dashed border-gray-600 text-xs capitalize text-muted-foreground data-[state=active]:bg-accent data-[state=active]:text-accent-foreground px-1.5 sm:px-2.5 gap-1"
+              className="sm:gap-2 text-xs capitalize text-muted-foreground data-[state=active]:bg-accent data-[state=active]:text-accent-foreground px-1.5 sm:px-2.5 gap-1"
               size="sm"
               variant="ghost"
               radius="none"
@@ -113,81 +110,6 @@ export function TechnologyFilter({
           onClick={() => onFilterChange(null)}>
           All
         </Button>
-      </div>
-    </div>
-  );
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                 Decorators                                 */
-/* -------------------------------------------------------------------------- */
-
-function HorizontalBordersDecorator() {
-  return (
-    <div className="absolute inset-0 z-30 pointer-events-none">
-      {[
-        { position: "top-[35px]" },
-        { position: "-bottom-14" },
-        { position: "-top-px" },
-        { position: "-bottom-5" },
-      ].map((border, index) => (
-        <div
-          key={index}
-          className={cn("absolute inset-x-0 h-px", border.position)}>
-          <div className="absolute inset-x-0 top-px h-px opacity-35 dark:opacity-15">
-            <svg className="size-full" preserveAspectRatio="none">
-              <line
-                x1={0}
-                y1={0}
-                x2="100%"
-                y2={0}
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeDasharray="1 3"
-              />
-            </svg>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function VerticalBorderDecorator() {
-  return (
-    <div className="pointer-events-none absolute inset-0 z-20 sm:right-px">
-      {/* Left border */}
-      <div className="absolute -inset-y-12 -left-4 w-px lg:-inset-y-16">
-        <div className="absolute -inset-y-12 w-px opacity-35 dark:opacity-15 lg:-inset-y-16">
-          <svg className="size-full" preserveAspectRatio="none">
-            <line
-              x1={0}
-              y1={0}
-              x2={0}
-              y2="100%"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeDasharray="1 3"
-            />
-          </svg>
-        </div>
-      </div>
-
-      {/* Right border */}
-      <div className="absolute -inset-y-12 -right-4 w-px lg:-inset-y-16">
-        <div className="absolute -inset-y-12 w-px opacity-35 dark:opacity-15 lg:-inset-y-16">
-          <svg className="size-full" preserveAspectRatio="none">
-            <line
-              x1={0}
-              y1={0}
-              x2={0}
-              y2="100%"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeDasharray="1 3"
-            />
-          </svg>
-        </div>
       </div>
     </div>
   );
