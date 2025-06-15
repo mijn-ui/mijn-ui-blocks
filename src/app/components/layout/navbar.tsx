@@ -24,7 +24,7 @@ const PAGES = [
   },
   {
     title: "Blocks",
-    href: "/blocks",
+    href: "#blocks",
   },
 ];
 
