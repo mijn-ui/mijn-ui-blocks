@@ -3,7 +3,7 @@
 import { Suspense } from "react";
 import { BlocksSection } from "./blocks-section";
 import HeroSection from "./hero-section";
-import { Footer } from "@/app/components/layout/footer";
+import ScrollToTop from "@/app/components/scroll-to-top";
 
 const HomePage = () => {
   return (
@@ -24,26 +24,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <Footer>
-        <p className="text-xs sm:text-sm text-muted-foreground">
-          Created by{" "}
-          <a
-            href="https://github.com/HTLA380"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#46427c] underline dark:text-[#8f8bb4]">
-            Htet Aung Lin
-          </a>{" "}
-          at{" "}
-          <a
-            href="https://www.linkedin.com/company/picoinno"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline">
-            Pico
-          </a>
-        </p>
-      </Footer>
+      <ScrollToTop />
     </div>
   );
 };
