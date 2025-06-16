@@ -28,9 +28,9 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "./ui/resizable";
-import { toggleStyles } from "./ui/toggle";
-import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
+} from "@/app/components/ui/resizable";
+import { toggleStyles } from "@/app/components/ui/toggle";
+import { ToggleGroup, ToggleGroupItem } from "@/app/components/ui/toggle-group";
 
 type BlockViewerContextType = {
   url: string;

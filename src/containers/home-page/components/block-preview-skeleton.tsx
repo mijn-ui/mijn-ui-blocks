@@ -1,5 +1,5 @@
 import { Archive } from "lucide-react";
-import { Icons } from "./ui/icons";
+import { Icons } from "@/app/components/ui/icons";
 import Link from "next/link";
 
 interface BlockPreviewProps {
