@@ -54,12 +54,12 @@ export const generateStaticParams = () => {
 const BlockPage = async ({
   params,
 }: {
-  params: {
+  params: Promise<{
     tech: "react" | "tailwind" | "laravel";
     name: string;
-  };
+  }>;
 }) => {
-  const { tech, name } = params;
+  const { tech, name } = await params;
 
   const variant = findVariant(tech, name);
 
