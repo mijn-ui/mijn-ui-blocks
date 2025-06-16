@@ -1,5 +1,6 @@
 import { Archive } from "lucide-react";
 import { Icons } from "./ui/icons";
+import Link from "next/link";
 
 interface BlockPreviewProps {
   title: string;
@@ -282,7 +283,9 @@ export function BlockPreviewSkeleton({
   const Icon = technology && Icons[technology];
 
   return (
-    <div className="group cursor-pointer">
+    <Link
+      className="group cursor-pointer"
+      href={`/blocks/${technology}/${category}`}>
       <div className="mb-3 transition-transform group-hover:scale-105">
         {renderSkeleton()}
       </div>
@@ -299,6 +302,6 @@ export function BlockPreviewSkeleton({
         </div>
       </div>
       <div className="text-xs text-muted-foreground">{description}</div>
-    </div>
+    </Link>
   );
 }

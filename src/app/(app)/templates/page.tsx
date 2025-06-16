@@ -1,5 +1,3 @@
-"use client";
-
 import HeroSection from "@/containers/templates-page/hero-section";
 import { Suspense } from "react";
 import { TemplateShowcase } from "@/containers/templates-page/template-showcase";

@@ -86,8 +86,8 @@ const HeroSection = () => {
         Ready to Use
       </Title>
       <p className="mt-2 sm:mt-4 text-sm sm:text-medium font-medium text-muted-foreground md:mt-6">
-        Professional templates and blocks for React and Tailwind CSS. Build
-        faster <br /> with our collection of production-ready components.
+        Flexible and editable blocks to help you build React UIs with Tailwind
+        CSS without starting from scratch.
       </p>
       <div className="mt-4 flex flex-col gap-2 sm:flex-row md:mt-6 w-full">
         <Button asChild color="primary">
