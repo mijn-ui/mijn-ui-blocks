@@ -67,7 +67,7 @@ const CategoryPage = async ({
         <div className="w-full max-w-screen-xl flex flex-col gap-4 px-4 pt-8 pb-20 min-h-screen">
           <Link
             href={"/"}
-            className="mb-2 w-fit items-center gap-1 text-sm text-secondary underline hover:text-foreground">
+            className="mb-2 flex w-fit items-center gap-1 text-sm text-secondary underline hover:text-foreground">
             <ArrowLeft />
             Go Back Home
           </Link>
