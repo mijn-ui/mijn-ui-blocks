@@ -6,6 +6,9 @@ import { LoaderCircle } from "lucide-react";
 import path from "path";
 import fs from "fs";
 
+/* -------------------------------------------------------------------------- */
+/*                              Generate Metadata                             */
+/* -------------------------------------------------------------------------- */
 export async function generateMetadata({
   params,
 }: {
@@ -16,116 +19,143 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { tech, name } = await params;
 
-  const group = Blocks.find((blockGroup) => blockGroup.group === tech);
+  const variant = findVariant(tech, name);
 
-  if (!group) {
-    return {};
+  if (!variant) {
+    return {
+      title: "Not Found",
+      description: "The requested block variant could not be found.",
+    };
   }
-
-  const block = group.blocks.find((b) => b.name === name);
-
-  if (!block) {
-    return {};
-  }
-
-  const { title, description } = block;
 
   return {
-    title,
-    description,
+    title: variant.title,
+    description: variant.description,
   };
 }
 
+/* -------------------------------------------------------------------------- */
+/*                           Generate Static Params                           */
+/* -------------------------------------------------------------------------- */
 export const generateStaticParams = () => {
   return Blocks.flatMap((group) =>
-    Object.keys(group.blocks).map((blockName) => ({
-      tech: group.group,
-      name: blockName,
-    }))
+    group.blocks.flatMap((block) =>
+      block.variants.map((variant) => ({
+        tech: group.group,
+        name: variant.name,
+      }))
+    )
   );
 };
 
+/* -------------------------------------------------------------------------- */
+/*                                Block Page                                  */
+/* -------------------------------------------------------------------------- */
 const BlockPage = async ({
   params,
 }: {
-  params: Promise<{
+  params: {
     tech: "react" | "tailwind" | "laravel";
     name: string;
-  }>;
+  };
 }) => {
-  const { tech, name } = await params;
+  const { tech, name } = params;
+
+  const variant = findVariant(tech, name);
+
+  if (!variant) {
+    return notFound();
+  }
+
   if (tech === "react") {
-    const Component = getBlockComponent(name, tech);
-
-    if (!Component) {
-      return notFound();
-    }
-
-    return (
-      <div className="h-screen w-screen overflow-hidden">
-        <React.Suspense
-          fallback={
-            <div className="flex w-full items-center justify-center text-small text-muted-foreground">
-              <LoaderCircle className="mr-2 size-4 animate-spin" />
-              Loading...
-            </div>
-          }>
-          <Component />
-        </React.Suspense>
-      </div>
+    return renderReactComponent(
+      variant.component as React.LazyExoticComponent<() => React.JSX.Element>
     );
   }
 
   if (tech === "tailwind" || tech === "laravel") {
-    const currentHTML = Blocks.find(
-      (group) => group.group === tech
-    )?.blocks.find((block) => block.name === name)?.component;
-
-    if (!currentHTML) {
-      return notFound();
-    }
-
-    const content = getHTMLContent(currentHTML as string);
-
-    return (
-      <div className="h-screen w-screen overflow-hidden tailwind-theme-wrapper">
-        <React.Suspense
-          fallback={
-            <div className="flex w-full items-center justify-center text-small text-muted-foreground">
-              <LoaderCircle className="mr-2 size-4 animate-spin" />
-              Loading...
-            </div>
-          }>
-          <div dangerouslySetInnerHTML={{ __html: content }} />
-        </React.Suspense>
-      </div>
-    );
+    return renderHTMLContent(variant.component as string);
   }
 
   return notFound();
 };
 
-const getBlockComponent = (
-  name: string,
-  tech: "react" | "tailwind" | "laravel"
-) => {
-  const blockGroup = Blocks.find((group) => group.group === tech);
-  return (
-    blockGroup?.blocks.find((block) => block.name === name)?.component || null
-  );
-};
+/* -------------------------------------------------------------------------- */
+/*                              Helper Functions                              */
+/* -------------------------------------------------------------------------- */
 
 /**
- * Gets HTML content as a string, ready for rendering with dangerouslySetInnerHTML
+ * Finds a variant by tech and name.
  *
- * @param contentPath - Path to the HTML file
- * @param options - Configuration options for the file path
- * @returns HTML content as a cleaned string
+ * @param tech - The technology group (e.g., "react", "tailwind", "laravel").
+ * @param name - The name of the variant.
+ * @returns The matching variant or undefined.
+ */
+function findVariant(tech: string, name: string) {
+  const group = Blocks.find((blockGroup) => blockGroup.group === tech);
+  const block = group?.blocks.find((block) =>
+    block.variants.some((variant) => variant.name === name)
+  );
+  return block?.variants.find((variant) => variant.name === name);
+}
+
+/**
+ * Renders a React component with a suspense fallback.
+ *
+ * @param Component - The React component to render.
+ * @returns A JSX element rendering the component.
+ */
+function renderReactComponent(
+  Component: React.LazyExoticComponent<() => React.JSX.Element>
+) {
+  return (
+    <div className="h-screen w-screen overflow-hidden">
+      <React.Suspense
+        fallback={
+          <div className="flex w-full items-center justify-center text-small text-muted-foreground">
+            <LoaderCircle className="mr-2 size-4 animate-spin" />
+            Loading...
+          </div>
+        }>
+        <Component />
+      </React.Suspense>
+    </div>
+  );
+}
+
+/**
+ * Renders HTML content from a file path.
+ *
+ * @param contentPath - The path to the HTML file.
+ * @returns A JSX element rendering the HTML content.
+ */
+function renderHTMLContent(contentPath: string) {
+  const content = getHTMLContent(contentPath);
+
+  return (
+    <div className="h-screen w-screen overflow-hidden tailwind-theme-wrapper">
+      <React.Suspense
+        fallback={
+          <div className="flex w-full items-center justify-center text-small text-muted-foreground">
+            <LoaderCircle className="mr-2 size-4 animate-spin" />
+            Loading...
+          </div>
+        }>
+        <div dangerouslySetInnerHTML={{ __html: content }} />
+      </React.Suspense>
+    </div>
+  );
+}
+
+/**
+ * Gets HTML content as a string, ready for rendering with dangerouslySetInnerHTML.
+ *
+ * @param contentPath - Path to the HTML file.
+ * @returns HTML content as a cleaned string.
  */
 function getHTMLContent(contentPath: string): string {
   try {
     const absolutePath = path.join(process.cwd(), contentPath);
-
     return fs.readFileSync(absolutePath, "utf8");
   } catch (error) {
     console.error(`Failed to get HTML content: ${contentPath}`, error);

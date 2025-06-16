@@ -3,6 +3,12 @@
 import HeroSection from "@/containers/templates-page/hero-section";
 import { Suspense } from "react";
 import { TemplateShowcase } from "@/containers/templates-page/template-showcase";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "MijnUI | Templates",
+  description: "",
+};
 
 const TemplatePage = () => {
   return (
