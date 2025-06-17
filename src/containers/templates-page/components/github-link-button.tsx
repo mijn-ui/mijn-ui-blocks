@@ -1,7 +1,7 @@
-import React from "react"
-import { Button } from "@mijn-ui/react-button"
-import { Icons } from "@/app/components/ui/icons"
-import Link from "next/link"
+import React from "react";
+import { Button } from "@mijn-ui/react";
+import { Icons } from "@/app/components/ui/icons";
+import Link from "next/link";
 
 const GithubLinkButton = ({ href }: { href: string }) => {
   return (
@@ -11,7 +11,7 @@ const GithubLinkButton = ({ href }: { href: string }) => {
         Github
       </Link>
     </Button>
-  )
-}
+  );
+};
 
-export { GithubLinkButton }
+export { GithubLinkButton };

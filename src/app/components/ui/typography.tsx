@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "@mijn-ui/react-theme";
+import { cn } from "@mijn-ui/react";
 
 const SubTitle = ({ className, ...props }: React.ComponentProps<"h3">) => (
   <h3

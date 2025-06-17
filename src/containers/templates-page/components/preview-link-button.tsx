@@ -1,6 +1,6 @@
-import React from "react"
-import { Button } from "@mijn-ui/react-button"
-import { ExternalLink } from "lucide-react"
+import React from "react";
+import { Button } from "@mijn-ui/react";
+import { ExternalLink } from "lucide-react";
 
 const PreviewLinkButton = ({ href }: { href: string }) => {
   return (
@@ -10,7 +10,7 @@ const PreviewLinkButton = ({ href }: { href: string }) => {
         <ExternalLink />
       </a>
     </Button>
-  )
-}
+  );
+};
 
-export { PreviewLinkButton }
+export { PreviewLinkButton };
