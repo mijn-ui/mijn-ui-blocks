@@ -16,11 +16,12 @@ const HeroSection = () => {
       </Title>
       <p className="mt-2 sm:mt-4 text-sm sm:text-medium font-medium text-muted-foreground md:mt-6">
         Flexible and editable blocks to help you build React UIs with Tailwind
-        CSS without starting from scratch.
+        CSS
+        <br /> without starting from scratch.
       </p>
       <div className="mt-4 flex flex-col gap-2 sm:flex-row md:mt-6 w-full">
         <Button asChild color="primary">
-          <a href="#blocks">Browse Blocks</a>
+          <Link href="/blocks">Browse Blocks</Link>
         </Button>
         <Button variant="outlined" asChild>
           <Link href="/templates">

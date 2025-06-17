@@ -24,7 +24,7 @@ Before deploying, ensure you have the following ready:
 3. **Run the Docker container:**
 
    ```
-   docker run -p 3000:3000 --env-file .env my-nextjs-app
+   docker run -p 3000:3000 my-nextjs-app
    ```
 
 4. **Access the app:** Open [http://localhost:3000](http://localhost:3000) in your browser.

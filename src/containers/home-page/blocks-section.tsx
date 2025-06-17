@@ -1,3 +1,5 @@
+"use client";
+
 import { Blocks } from "@/blocks";
 import { useQueryState } from "nuqs";
 import React from "react";
