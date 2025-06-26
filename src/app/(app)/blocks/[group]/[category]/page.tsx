@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Blocks } from "@/blocks";
 import { SubTitle } from "@/app/components/ui/typography";
-import { BlockViewer } from "@/containers/home-page/components/block-viewer";
+import { BlockViewer } from "@/features/blocks/components/block-viewer";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import ScrollToTop from "@/app/components/scroll-to-top";
@@ -67,7 +67,7 @@ const CategoryPage = async ({
         <div className="w-full max-w-screen-xl flex flex-col gap-4 px-4 pt-8 pb-20 min-h-screen">
           <Link
             href={"/"}
-            className="mb-2 flex w-fit items-center gap-1 text-sm text-secondary underline hover:text-foreground">
+            className="mb-2 flex w-fit items-center gap-1 text-sm text-secondary-foreground underline hover:text-foreground">
             <ArrowLeft />
             Go Back Home
           </Link>

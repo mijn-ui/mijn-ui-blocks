@@ -112,7 +112,7 @@ function renderReactComponent(
     <div className="h-screen w-screen overflow-hidden">
       <React.Suspense
         fallback={
-          <div className="flex w-full items-center justify-center text-small text-muted-foreground">
+          <div className="flex w-full items-center justify-center text-sm text-muted-foreground">
             <LoaderCircle className="mr-2 size-4 animate-spin" />
             Loading...
           </div>
@@ -136,7 +136,7 @@ function renderHTMLContent(contentPath: string) {
     <div className="h-screen w-screen overflow-hidden tailwind-theme-wrapper">
       <React.Suspense
         fallback={
-          <div className="flex w-full items-center justify-center text-small text-muted-foreground">
+          <div className="flex w-full items-center justify-center text-sm text-muted-foreground">
             <LoaderCircle className="mr-2 size-4 animate-spin" />
             Loading...
           </div>

@@ -7,11 +7,11 @@ type BlockBase = {
   iframeHeight?: number;
 };
 
-type BlockVariant = BlockBase & {
+export type BlockVariant = BlockBase & {
   component: React.LazyExoticComponent<() => React.JSX.Element> | string;
 };
 
-type BlockGroup = {
+export type BlockGroup = {
   category: string;
   title: string;
   description: string;

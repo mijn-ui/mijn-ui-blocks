@@ -44,10 +44,9 @@ const ScrollToTop = ({
       onClick={scrollToTop}
       onKeyDown={handleKeyDown}
       className={cn(
-        "fixed bottom-6 right-6 z-50 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary ring-offset-background animate-in fade-in slide-in-from-bottom-2",
+        "fixed bottom-6 rounded-full right-6 z-50 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary ring-offset-background animate-in fade-in slide-in-from-bottom-2",
         className
       )}
-      radius="full"
       iconOnly
       aria-label="Scroll to top"
       title="Scroll to top">

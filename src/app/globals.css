@@ -1,7 +1,3 @@
-/* temporary theme import, since mijnui react and mijnui tailwind has a different theme colors and variables
-we are currently working to synchornize them */
-@import "../blocks/tailwind/theme.css";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,6 +10,7 @@ we are currently working to synchornize them */
   .dark {
     --background-subtle: 0 0% 5%;
   }
+
   * {
     border-color: hsl(var(--mijnui-border));
   }

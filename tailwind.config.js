@@ -15,5 +15,10 @@ module.exports = {
       },
     },
   },
-  plugins: [mijnui(), tailwindCssAnimate],
+  plugins: [
+    mijnui({
+      prefix: "mijnui",
+    }),
+    tailwindCssAnimate,
+  ],
 };

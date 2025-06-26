@@ -148,7 +148,7 @@ const BlockViewerToolbar = () => {
           </CollapsibleContent>
 
           <CollapsibleTrigger asChild>
-            <Button size="xs" variant="ghost">
+            <Button size="sm" variant="ghost">
               {isOpen ? (
                 <X className="h-4 w-4 transition-transform duration-200" />
               ) : (
@@ -164,8 +164,7 @@ const BlockViewerToolbar = () => {
             alert("This feature is not available yet. Coming soon!")
           }
           size="sm"
-          className="text-sm"
-          variant="outlined">
+          className="text-sm">
           <ArrowDownCircle size={16} />
           Download .Zip File
         </Button>
@@ -183,7 +182,7 @@ const BlockViewerContent = () => {
     <TabsContent value="preview">
       <ResizablePanelGroup direction="horizontal" className="relative z-10">
         <ResizablePanel
-          className="relative aspect-[4/2.5] rounded-xl border-small bg-background md:aspect-auto"
+          className="relative aspect-[4/2.5] rounded-xl border bg-background md:aspect-auto"
           defaultSize={100}
           minSize={30}
           ref={resizablePanelRef}>
@@ -205,7 +204,7 @@ const BlockViewerContent = () => {
 const BlockViewerSourceCode = () => {
   return (
     <TabsContent value="source">
-      <div className="flex w-full items-center justify-center aspect-[4/2.5] md:h-[var(--iframe-height)] rounded-xl border-small bg-accent text-center p-4">
+      <div className="flex w-full items-center justify-center aspect-[4/2.5] md:h-[var(--iframe-height)] rounded-xl border bg-secondary text-center p-4">
         <p className="text-muted-foreground text-sm">
           Source code for this block is not available.
         </p>

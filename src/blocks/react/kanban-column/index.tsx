@@ -115,7 +115,7 @@ const KanbanExample = () => {
             <KanbanColumn key={container.id} className="w-full max-w-[352px]">
               <KanbanHeader className="pr-2">
                 <div className="flex items-center gap-2">
-                  <KanbanTitle className="text-medium sm:text-large">
+                  <KanbanTitle className="text-base sm:text-lg">
                     {container.title}
                   </KanbanTitle>
                   <KanbanItemCount>{container.items.length}</KanbanItemCount>
@@ -156,8 +156,8 @@ const KanbanExample = () => {
                 ) : (
                   <div className="h-32">
                     <div
-                      className="flex size-full flex-col items-center justify-center gap-3 rounded-medium px-4 py-2"
-                      // custom dashed border-small styles
+                      className="flex size-full flex-col items-center justify-center gap-3 rounded-md px-4 py-2"
+                      // custom dashed border styles
                       style={{
                         backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='6' ry='6' stroke='%23737373FF' stroke-width='1' stroke-dasharray='6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
                         borderRadius: "6px",
@@ -165,7 +165,7 @@ const KanbanExample = () => {
                       <span>
                         <StickyNoteIcon /> {/* custom Icon */}
                       </span>
-                      <p className="text-small text-muted-foreground">
+                      <p className="text-sm text-muted-foreground">
                         No tasks currently. Board is empty.
                       </p>
                     </div>
@@ -173,7 +173,7 @@ const KanbanExample = () => {
                 )}
               </KanbanContent>
               <KanbanFooter>
-                <button className="flex items-center gap-2 text-small text-muted-foreground">
+                <button className="flex items-center gap-2 text-sm text-muted-foreground">
                   <span>
                     <Plus className="size-5" />
                   </span>

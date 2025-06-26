@@ -34,7 +34,7 @@ const Navbar = ({ className }: { className?: string }) => {
   const renderPages = PAGES.map((page) => (
     <Link
       key={page.title}
-      className="text-small text-muted-foreground hover:text-secondary"
+      className="text-sm text-muted-foreground hover:text-secondary-foreground"
       href={page.href}>
       {page.title}
     </Link>
@@ -83,17 +83,17 @@ const Navbar = ({ className }: { className?: string }) => {
         <div className="flex items-center md:hidden">
           <ClickAwayListener onClickAway={() => setDropdownOpen(false)}>
             <Collapsible open={dropdownOpen} onOpenChange={setDropdownOpen}>
-              <CollapsibleTrigger className="flex size-8 items-center justify-center text-muted-foreground transition duration-200 hover:text-secondary">
-                <ChevronDown className="text-large" />
+              <CollapsibleTrigger className="flex size-8 items-center justify-center text-muted-foreground transition duration-200 hover:text-secondary-foreground">
+                <ChevronDown className="text-lg" />
               </CollapsibleTrigger>
-              <CollapsibleContent className="top-[calc(var(--navbar-height)] absolute inset-x-0 mt-2 overflow-hidden bg-card text-small transition-[height] data-[state=closed]:animate-collapsible-close data-[state=open]:animate-collapsible-open">
+              <CollapsibleContent className="top-[calc(var(--navbar-height)] absolute inset-x-0 mt-2 overflow-hidden bg-background text-sm transition-[height] data-[state=closed]:animate-collapsible-close data-[state=open]:animate-collapsible-open">
                 <div className="relative flex w-full flex-col items-start justify-between space-y-2 px-4 py-2">
                   <div className="flex w-fit flex-col gap-2">{renderPages}</div>
                   <Separator />
 
                   <div className="flex w-full items-center justify-between">
                     <Link
-                      className="inline-flex items-center gap-2 text-muted-foreground hover:text-secondary"
+                      className="inline-flex items-center gap-2 text-muted-foreground hover:text-secondary-foreground"
                       target="_blank"
                       href={"https://github.com/mijn-ui/mijn-ui-blocks"}>
                       Github <ExternalLink />

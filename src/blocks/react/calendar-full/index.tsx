@@ -284,7 +284,7 @@ const CalendarFullExample = () => {
 
   return (
     <div className="flex size-full items-center justify-center">
-      <div className="relative h-fit w-full max-w-screen-lg overflow-y-auto rounded-2xl bg-card p-4">
+      <div className="relative h-fit w-full max-w-screen-lg overflow-y-auto rounded-2xl bg-background p-4">
         {/* TODO: Fix the hydration error */}
         <div className="size-full">
           <CalendarFull

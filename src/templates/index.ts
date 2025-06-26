@@ -19,7 +19,7 @@ export type Template = {
   githubURL?: string;
 };
 
-type Templates = {
+export type Templates = {
   group: TechnologyGroup;
   templates: Template[];
 };

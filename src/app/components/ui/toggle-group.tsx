@@ -26,7 +26,7 @@ const ToggleGroup = ({
 }: ToggleGroupProps) => (
   <ToggleGroupPrimitive.Root
     className={cn(
-      "flex items-center justify-center gap-1 bg-background rounded-medium p-1",
+      "flex items-center justify-center gap-1 bg-background rounded-md p-1",
       className
     )}
     {...props}>
