@@ -52,9 +52,7 @@ const Navbar = ({ className }: { className?: string }) => {
             <Logo className="size-5 items-center fill-fd-foreground" />
             MijnUI
           </Link>
-          <Badge
-            size="xs"
-            className="bg-primary/20 text-primary hover:bg-primary/20 hover:text-primary">
+          <Badge variant="primary-subtle" radius="full">
             v0.1.0
           </Badge>
         </div>
@@ -65,8 +63,7 @@ const Navbar = ({ className }: { className?: string }) => {
               size={"sm"}
               variant="ghost"
               iconOnly
-              className="px-2 text-muted-foreground"
-              radius="full"
+              className="rounded-full px-2 text-muted-foreground"
               asChild>
               <a
                 rel="noreferrer noopener"
@@ -93,7 +90,7 @@ const Navbar = ({ className }: { className?: string }) => {
 
                   <div className="flex w-full items-center justify-between">
                     <Link
-                      className="inline-flex items-center gap-2 text-muted-foreground hover:text-secondary-foreground"
+                      className="inline-flex items-center  gap-2 text-muted-foreground hover:text-secondary-foreground"
                       target="_blank"
                       href={"https://github.com/mijn-ui/mijn-ui-blocks"}>
                       Github <ExternalLink />

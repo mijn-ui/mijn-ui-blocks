@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button, ButtonProps } from "@mijn-ui/react";
+import { Button, ButtonProps, cn } from "@mijn-ui/react";
 import { useTheme } from "next-themes";
 import { Icons } from "./icons";
 
 /* -------------------------------------------------------------------------- */
 
-const ThemeToggler = ({ ...props }: ButtonProps) => {
+const ThemeToggler = ({ className, ...props }: ButtonProps) => {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
 
@@ -19,9 +19,10 @@ const ThemeToggler = ({ ...props }: ButtonProps) => {
     return (
       <Button
         variant="ghost"
-        radius="full"
         size="sm"
         onClick={() => setTheme("light")}
+        className={cn("rounded-full", className)}
+        iconOnly
         {...props}>
         <Icons.sun className="text-base" />
       </Button>
@@ -31,9 +32,10 @@ const ThemeToggler = ({ ...props }: ButtonProps) => {
     return (
       <Button
         variant="ghost"
-        radius="full"
         size="sm"
         onClick={() => setTheme("dark")}
+        className={cn("rounded-full", className)}
+        iconOnly
         {...props}>
         <Icons.moon className="text-sm" />
       </Button>
