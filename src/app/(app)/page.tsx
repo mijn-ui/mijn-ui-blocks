@@ -34,7 +34,9 @@ const HomePage = () => {
                   Ready to Use
                 </Title>
                 <Suspense>
-                  <BlocksFilter />
+                  <div className="lg:block hidden">
+                    <BlocksFilter />
+                  </div>
                 </Suspense>
               </div>
               <p className="mt-2 sm:mt-4 text-sm sm:text-base font-medium text-muted-foreground md:mt-6">
@@ -56,6 +58,9 @@ const HomePage = () => {
           </section>
 
           <section id="blocks" className="pt-[clamp(60px,15vw,120px)] mb-20">
+            <div className="lg:hidden flex items-center justify-center sticky top-12 left-0 z-20 bg-background">
+              <BlocksFilter />
+            </div>
             <div className="max-w-screen-xl mx-auto">
               <div className="px-5 xl:px-0 mt-12">
                 <BlocksGroupDisplay />

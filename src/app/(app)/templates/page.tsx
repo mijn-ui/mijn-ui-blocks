@@ -3,7 +3,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "MijnUI | Templates",
-  description: "",
+  description:
+    "Browse a collection of templates built with MijnUI components to showcase our design system. This feature is currently in beta.",
 };
 
 const TemplatePage = () => {

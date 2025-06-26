@@ -12,7 +12,7 @@ const BlocksView = () => {
         <section className="flex w-full max-w-screen-xl flex-col items-start text-left">
           <Link
             href={"/"}
-            className="mb-2 hidden w-fit items-center gap-1 text-sm text-secondary-foreground underline hover:text-foreground md:flex">
+            className="mb-2 w-fit items-center gap-1 text-sm text-secondary-foreground underline hover:text-foreground flex">
             <ArrowLeft />
             Go Back Home
           </Link>
