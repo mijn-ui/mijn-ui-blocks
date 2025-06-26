@@ -24,7 +24,7 @@ const ScreenState: React.FC<ScreenStateProps> = ({
   onCreate,
 }) => {
   return (
-    <Card className="flex w-full max-w-screen-sm flex-col items-center justify-center space-y-3 rounded-2xl bg-background p-6 text-center sm:space-y-6">
+    <Card className="flex w-full max-w-screen-sm flex-col items-center justify-center space-y-3 rounded-2xl bg-background-alt p-6 text-center sm:space-y-6">
       <CardHeader className="p-0">
         <Archive className="size-10 text-foreground sm:size-12" />
       </CardHeader>
@@ -38,10 +38,8 @@ const ScreenState: React.FC<ScreenStateProps> = ({
       </CardContent>
 
       <CardFooter className="gap-3">
-        <Button className="h-9 sm:h-10" variant={"outlined"} onClick={onCancel}>
-          Cancel
-        </Button>
-        <Button color="primary" className="h-9 sm:h-10" onClick={onCreate}>
+        <Button onClick={onCancel}>Cancel</Button>
+        <Button variant="primary" onClick={onCreate}>
           Create New File
         </Button>
       </CardFooter>

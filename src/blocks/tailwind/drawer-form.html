@@ -2,7 +2,7 @@
 <div class="fixed inset-0 z-40 bg-black/80"></div>
 
 <div
-  class="bg-surfce fixed inset-y-0 left-0 z-50 flex w-80 flex-col bg-background shadow-xl">
+  class="bg-background-alt fixed inset-y-0 left-0 z-50 flex w-80 flex-col bg-background shadow-xl">
   <!-- Drawer Header -->
   <div class="flex flex-shrink-0 items-center justify-between p-4">
     <!-- Drawer Title -->
@@ -10,7 +10,7 @@
 
     <!-- Drawer Close  -->
     <button
-      class="inline-flex size-9 items-center justify-center gap-1 rounded-full text-base text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+      class="inline-flex size-9 items-center justify-center gap-1 rounded-full text-base text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
       <svg
         stroke="currentColor"
         fill="none"
@@ -41,7 +41,7 @@
         <label for="firstname" class="text-sm font-medium">First name</label>
         <div class="relative w-full">
           <input
-            class="peer flex h-10 w-full rounded-md border border-input-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            class="peer flex h-10 w-full rounded-md border border-input-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             id="firstname"
             placeholder="John" />
         </div>
@@ -52,7 +52,7 @@
         <label for="lastname" class="text-sm font-medium">Last name</label>
         <div class="relative w-full">
           <input
-            class="peer flex h-10 w-full rounded-md border border-input-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            class="peer flex h-10 w-full rounded-md border border-input-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             id="lastname"
             placeholder="Doe" />
         </div>
@@ -63,7 +63,7 @@
         <label for="email" class="text-sm font-medium">Email</label>
         <div class="relative w-full">
           <input
-            class="peer flex h-10 w-full rounded-md border border-input-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            class="peer flex h-10 w-full rounded-md border border-input-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             id="email"
             placeholder="johndoe@example.com" />
         </div>
@@ -74,7 +74,7 @@
         <label for="message" class="text-sm font-medium">Your Message</label>
         <!-- TextArea -->
         <textarea
-          class="border-input disabled:opacity-disabled flex min-h-[80px] w-full rounded-md border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed"
+          class="border-input disabled:opacity-disabled flex min-h-[80px] w-full rounded-md border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:cursor-not-allowed"
           placeholder="Please leave a comment..."></textarea>
       </div>
     </div>
@@ -84,13 +84,13 @@
   <div class="flex w-full flex-shrink-0 items-center justify-end gap-2 p-4">
     <!-- DrawerClose (Button Subtle Color Component) -->
     <button
-      class="inline-flex h-10 items-center justify-center gap-1 rounded-md bg-default/40 px-3.5 text-sm text-foreground transition-colors duration-200 ease-in-out hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+      class="inline-flex h-10 items-center justify-center gap-1 rounded-md hover:bg-secondary px-3.5 text-sm text-foreground transition-colors duration-200 ease-in-out hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
       Close
     </button>
 
     <!-- DrawerClose (Button Primary Color Component) -->
     <button
-      class="inline-flex h-10 items-center justify-center gap-1 rounded-md bg-primary px-3.5 text-sm text-primary-foreground transition-colors duration-200 ease-in-out hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+      class="inline-flex h-10 items-center justify-center gap-1 rounded-md bg-primary px-3.5 text-sm text-primary-foreground transition-colors duration-200 ease-in-out hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
       Submit Form
     </button>
   </div>

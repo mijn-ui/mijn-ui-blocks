@@ -8,7 +8,7 @@ import { Button } from "@mijn-ui/react";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { useQueryState } from "nuqs";
-import { createContext, useContext } from "react";
+import { createContext, Suspense, useContext } from "react";
 
 type TemplateContextType = {
   filter: string;
@@ -159,18 +159,21 @@ const TemplatesGroupDisplay = () => {
 /* -------------------------------------------------------------------------- */
 
 const TemplatesDisplay = () => {
+  // Have to wrap with the Suspense because the provider uses `useSearchParams()`
   return (
-    <TemplateProvider>
-      <div className="w-full flex items-center justify-center sticky top-12 bg-background left-0 z-20">
-        <div className="w-full max-w-screen-xl flex items-center justify-end">
-          <TemplatesFilter />
+    <Suspense fallback={<div>Loading...</div>}>
+      <TemplateProvider>
+        <div className="w-full flex items-center justify-center sticky top-12 bg-background left-0 z-20">
+          <div className="w-full max-w-screen-xl flex items-center justify-end">
+            <TemplatesFilter />
+          </div>
         </div>
-      </div>
 
-      <div className="space-y-12 py-12 max-w-screen-xl text-center md:text-left px-5 xl:px-0">
-        <TemplatesGroupDisplay />
-      </div>
-    </TemplateProvider>
+        <div className="space-y-12 py-12 max-w-screen-xl text-center md:text-left px-5 xl:px-0">
+          <TemplatesGroupDisplay />
+        </div>
+      </TemplateProvider>
+    </Suspense>
   );
 };
 

@@ -5,14 +5,14 @@
   <!-- Header -->
   <!-- Adjust left property based on sidebar visibility -->
   <header
-    class="fixed left-0 right-0 top-0 z-10 flex h-14 items-center justify-center bg-background shadow-sm sm:left-72">
+    class="fixed left-0 right-0 top-0 z-10 flex h-14 items-center justify-center bg-background-alt shadow-sm sm:left-72">
     <!-- Navbar -->
     <nav class="flex w-full items-center justify-between px-3 py-2">
       <!-- Navbar Left -->
       <div class="flex items-center gap-4">
         <!-- Sidebar Trigger Button -->
         <button
-          class="inline-flex h-8 w-8 items-center justify-center gap-1 rounded-md border border-border bg-transparent text-sm text-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50 sm:h-10 sm:w-10">
+          class="inline-flex h-8 w-8 items-center justify-center gap-1 rounded-md border border-border bg-transparent text-sm text-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50 sm:h-10 sm:w-10">
           <svg
             width="20"
             height="18"
@@ -61,7 +61,7 @@
           </div>
 
           <input
-            class="peer flex h-10 w-full rounded-md border border-input-border bg-transparent py-2 pl-8 pr-8 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            class="peer flex h-10 w-full rounded-md border border-input-border bg-transparent py-2 pl-8 pr-8 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             id="example-4"
             placeholder="Username..." />
 
@@ -88,7 +88,7 @@
         <div class="flex items-center">
           <!-- Notification Button -->
           <button
-            class="inline-flex h-10 w-10 items-center justify-center gap-1 rounded-full text-sm text-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+            class="inline-flex h-10 w-10 items-center justify-center gap-1 rounded-full text-sm text-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -107,7 +107,7 @@
 
           <!-- Settings Button -->
           <button
-            class="inline-flex h-10 w-10 items-center justify-center gap-1 rounded-full text-sm text-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+            class="inline-flex h-10 w-10 items-center justify-center gap-1 rounded-full text-sm text-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -128,7 +128,7 @@
 
           <!-- Language Selector Button -->
           <button
-            class="inline-flex h-10 w-10 items-center justify-center gap-1 rounded-full text-sm text-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+            class="inline-flex h-10 w-10 items-center justify-center gap-1 rounded-full text-sm text-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
             <p>EN</p>
             <svg
               stroke="currentColor"
@@ -164,7 +164,7 @@
   <!-- ------------------------------- Sidebar ------------------------------- -->
   <aside class="fixed inset-y-0 left-0 z-50 flex shadow-sm ease-out">
     <div
-      class="h-full w-16 space-y-2 overflow-y-auto border-r border-border bg-background">
+      class="h-full w-16 space-y-2 overflow-y-auto border-r border-border bg-background-alt">
       <!-- Sidebar Icon Header -->
       <div class="flex items-center justify-center py-4">
         <!-- Sidebar Logo -->
@@ -199,7 +199,7 @@
         <!-- Sidebar Icon/Active -->
         <button
           title="Dashboard"
-          class="inline-flex size-9 items-center justify-center gap-1 rounded-md bg-primary/20 text-sm text-primary transition-colors duration-200 ease-in-out hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+          class="inline-flex size-9 items-center justify-center gap-1 rounded-md bg-primary/20 text-sm text-primary transition-colors duration-200 ease-in-out hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -217,7 +217,7 @@
         <!-- Sidebar Icon -->
         <button
           title="Contacts"
-          class="inline-flex size-9 items-center justify-center gap-1 rounded-md text-sm text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+          class="inline-flex size-9 items-center justify-center gap-1 rounded-md text-sm text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -234,7 +234,7 @@
         <!-- Sidebar Icon -->
         <button
           title="Sell"
-          class="inline-flex size-9 items-center justify-center gap-1 rounded-md text-sm text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+          class="inline-flex size-9 items-center justify-center gap-1 rounded-md text-sm text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -251,7 +251,7 @@
         <!-- Sidebar Icon -->
         <button
           title="POS"
-          class="inline-flex size-9 items-center justify-center gap-1 rounded-md text-sm text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+          class="inline-flex size-9 items-center justify-center gap-1 rounded-md text-sm text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -268,7 +268,7 @@
         <!-- Sidebar Icon -->
         <button
           title="Reports"
-          class="inline-flex size-9 items-center justify-center gap-1 rounded-md text-sm text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+          class="inline-flex size-9 items-center justify-center gap-1 rounded-md text-sm text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -285,7 +285,7 @@
         <!-- Sidebar Icon -->
         <button
           title="Inventory"
-          class="inline-flex size-9 items-center justify-center gap-1 rounded-md text-sm text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+          class="inline-flex size-9 items-center justify-center gap-1 rounded-md text-sm text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -303,7 +303,7 @@
 
     <!-- Sidebar Content Toggle Button -->
     <button
-      class="absolute -right-4 bottom-32 inline-flex size-7 items-center justify-center gap-0 rounded-md bg-default px-0 text-sm text-foreground transition-colors duration-200 ease-in-out hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+      class="absolute -right-4 bottom-32 inline-flex size-7 items-center justify-center gap-0 rounded-md bg-default px-0 text-sm transition-colors duration-200 ease-in-out hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50 bg-inverse text-inverse-foreground">
       <!-- Remove classname "rotate-180" when the sidebar is Inactive. -->
       <svg
         stroke="currentColor"
@@ -324,7 +324,7 @@
 
     <!-- Sidebar Content -->
     <!-- Sidebar Content Inactive Class = 'w-0 overflow-hidden' -->
-    <div class="h-full w-56 bg-background">
+    <div class="h-full w-56 bg-background-alt border-r">
       <!-- Sidebar Content Header -->
       <div class="flex items-center gap-1 px-4 pt-6">
         <h5 class="text-xs font-semibold uppercase text-muted-foreground">
@@ -337,7 +337,7 @@
         <!-- Sidebar Item (Button Ghost Component) -->
         <a
           href="#"
-          class="inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-md px-3.5 text-sm text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+          class="inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-md px-3.5 text-sm text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
           <span
             class="flex size-5 flex-shrink-0 items-center justify-center [&>svg]:h-4 [&>svg]:w-4">
             <svg
@@ -361,7 +361,7 @@
         <div class="w-full">
           <!-- Sidebar Collapsible Trigger -->
           <button
-            class="inline-flex h-9 w-full items-center justify-start gap-1.5 rounded-md bg-primary px-3.5 text-sm text-primary-foreground transition-colors duration-200 ease-in-out hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+            class="inline-flex h-9 w-full items-center justify-start gap-1.5 rounded-md bg-primary px-3.5 text-sm text-primary-foreground transition-colors duration-200 ease-in-out hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
             <span
               class="flex size-5 flex-shrink-0 items-center justify-center [&>svg]:h-4 [&>svg]:w-4">
               <svg
@@ -434,7 +434,7 @@
         <!-- Sidebar Item (Button Ghost Component) -->
         <a
           href="#"
-          class="inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-md px-3.5 text-sm text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+          class="inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-md px-3.5 text-sm text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
           <span
             class="flex size-5 flex-shrink-0 items-center justify-center [&>svg]:h-4 [&>svg]:w-4">
             <svg
@@ -459,7 +459,7 @@
         <!-- Sidebar Item (Button Ghost Component) -->
         <a
           href="#"
-          class="inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-md px-3.5 text-sm text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
+          class="inline-flex h-9 w-full items-center justify-center gap-1.5 rounded-md px-3.5 text-sm text-muted-foreground transition-colors duration-200 ease-in-out hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:brightness-90 disabled:pointer-events-none disabled:opacity-50">
           <span
             class="flex size-5 flex-shrink-0 items-center justify-center [&>svg]:h-4 [&>svg]:w-4">
             <svg
@@ -489,7 +489,7 @@
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       <!-- Card -->
       <div
-        class="w-full space-y-3 rounded-xl bg-background p-5 shadow-sm sm:space-y-4 sm:p-6">
+        class="w-full space-y-3 rounded-xl bg-background border p-5 shadow-sm sm:space-y-4 sm:p-6">
         <span
           class="disabled:text-muted-foreground/75 inline-flex h-10 w-10 items-center justify-center gap-1 rounded-full bg-secondary p-0 text-sm hover:bg-muted hover:text-foreground disabled:bg-muted/75 sm:h-12 sm:w-12">
           <svg
@@ -521,7 +521,7 @@
 
       <!-- Card -->
       <div
-        class="w-full space-y-3 rounded-xl bg-background p-5 shadow-sm sm:space-y-4 sm:p-6">
+        class="w-full space-y-3 rounded-xl bg-background border p-5 shadow-sm sm:space-y-4 sm:p-6">
         <span
           class="disabled:text-muted-foreground/75 inline-flex h-10 w-10 items-center justify-center gap-1 rounded-full bg-secondary p-0 text-sm hover:bg-muted hover:text-foreground disabled:bg-muted/75 sm:h-12 sm:w-12">
           <svg
@@ -551,7 +551,7 @@
 
       <!-- Card -->
       <div
-        class="w-full space-y-3 rounded-xl bg-background p-5 shadow-sm sm:space-y-4 sm:p-6">
+        class="w-full space-y-3 rounded-xl bg-background border p-5 shadow-sm sm:space-y-4 sm:p-6">
         <span
           class="disabled:text-muted-foreground/75 inline-flex h-10 w-10 items-center justify-center gap-1 rounded-full bg-secondary p-0 text-sm hover:bg-muted hover:text-foreground disabled:bg-muted/75 sm:h-12 sm:w-12">
           <svg

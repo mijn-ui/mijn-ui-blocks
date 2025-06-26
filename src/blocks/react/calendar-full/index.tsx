@@ -319,7 +319,7 @@ const CalendarFullExample = () => {
                   Cancel
                 </Button>
                 <Button
-                  color="primary"
+                  variant="primary"
                   type="submit"
                   disabled={newEvent.title === ""}>
                   Create

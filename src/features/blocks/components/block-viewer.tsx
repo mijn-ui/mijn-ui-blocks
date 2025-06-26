@@ -97,7 +97,7 @@ const BlockViewerToolbar = () => {
 
   return (
     <div className="w-full h-10 flex items-center justify-between gap-4">
-      <TabsList className="w-fit">
+      <TabsList className="w-fit flex-row">
         <TabsTrigger value="preview">Preview</TabsTrigger>
         <TabsTrigger value="source">Source</TabsTrigger>
       </TabsList>

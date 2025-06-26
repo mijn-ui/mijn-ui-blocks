@@ -127,7 +127,7 @@
   }
 
   .fc-daygrid-dot-event {
-    @apply flex flex-col items-start justify-start truncate bg-secondary px-1 py-0.5 text-xs text-black;
+    @apply flex flex-col items-start justify-start truncate bg-orange-100 px-1 py-0.5 text-xs text-black;
 
     .fc-daygrid-event-dot {
       @apply hidden;

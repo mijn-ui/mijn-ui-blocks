@@ -3,7 +3,7 @@
 import { TechnologyFilter } from "@/app/components/technology-filter";
 import { Blocks, BlockVariant } from "@/blocks";
 import { useQueryState } from "nuqs";
-import { createContext, useContext } from "react";
+import { createContext, Suspense, useContext } from "react";
 import { BlockPreviewSkeleton } from "./components/block-preview-skeleton";
 
 type BlocksContextType = {
@@ -115,17 +115,20 @@ const BlocksGroupDisplay = () => {
 };
 
 const BlocksDisplay = () => {
+  // Have to wrap with the Suspense because the provider uses `useSearchParams()`
   return (
-    <BlocksProvider>
-      <div className="max-w-screen-xl mx-auto">
-        <div className="w-full flex items-center justify-end sticky top-12 left-0 bg-background">
-          <BlocksFilter />
+    <Suspense fallback={<div>Loading...</div>}>
+      <BlocksProvider>
+        <div className="max-w-screen-xl mx-auto">
+          <div className="w-full flex items-center justify-end sticky top-12 left-0 bg-background">
+            <BlocksFilter />
+          </div>
+          <div className="mt-12 px-8">
+            <BlocksGroupDisplay />
+          </div>
         </div>
-        <div className="mt-12 px-8">
-          <BlocksGroupDisplay />
-        </div>
-      </div>
-    </BlocksProvider>
+      </BlocksProvider>
+    </Suspense>
   );
 };
 

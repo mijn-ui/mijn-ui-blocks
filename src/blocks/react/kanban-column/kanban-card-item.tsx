@@ -40,9 +40,7 @@ const KanbanCardItem = ({
 
       {tags?.map((tag: string) => (
         <div key={tag} className="flex flex-wrap">
-          <Badge variant={"outlined"} className="px-2 py-0.5 text-xs">
-            {tag}
-          </Badge>
+          <Badge className="px-2 py-0.5 text-xs">{tag}</Badge>
         </div>
       ))}
 

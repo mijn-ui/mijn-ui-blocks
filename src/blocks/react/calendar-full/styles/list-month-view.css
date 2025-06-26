@@ -17,7 +17,7 @@
     }
 
     .fc-list-day-cushion {
-      @apply !border border-border text-base;
+      @apply !border bg-background-alt border-border text-base;
     }
 
     .fc-list-event-title {
