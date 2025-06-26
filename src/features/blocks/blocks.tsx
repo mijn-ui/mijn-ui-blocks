@@ -120,7 +120,7 @@ const BlocksDisplay = () => {
     <Suspense fallback={<div>Loading...</div>}>
       <BlocksProvider>
         <div className="max-w-screen-xl mx-auto">
-          <div className="w-full flex items-center justify-end sticky top-12 left-0 bg-background">
+          <div className="w-full flex items-center z-20 justify-center md:ustify-end sticky top-12 left-0 bg-background">
             <BlocksFilter />
           </div>
           <div className="mt-12 px-8">

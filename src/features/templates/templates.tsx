@@ -164,7 +164,7 @@ const TemplatesDisplay = () => {
     <Suspense fallback={<div>Loading...</div>}>
       <TemplateProvider>
         <div className="w-full flex items-center justify-center sticky top-12 bg-background left-0 z-20">
-          <div className="w-full max-w-screen-xl flex items-center justify-end">
+          <div className="w-full max-w-screen-xl flex items-center justify-center md:justify-end">
             <TemplatesFilter />
           </div>
         </div>
